@@ -19,7 +19,7 @@ int plus(int c, int d) {                                   // 감염 현황 업�
 
 
 
-	for (int i = 0; i < 6; i++) {
+	for (int i = 0; i < 6; i++) {						//반복문을 이용하여 구조체 출력
 		if (c == i + 1)
 			list[i].number += d;
 
