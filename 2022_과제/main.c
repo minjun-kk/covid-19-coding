@@ -16,12 +16,12 @@ int main() {
 
 
 	int a, e, d = 0;;
-	char major[6] = { 0 };
-	char name[4] = { 0 };       // 배열을 사용하여 변수 선언
-	char number[9] = { 0 };
+	char major[20] = { 0 };
+	char name[20] = { 0 };       // 배열을 사용하여 변수 선언
+	char number[20] = { 0 };
 	char* p;
 	p = number;                 // 포인터를 사용하여 변수를 선언
-	char b;
+	int b;
 
 	static struct c list[6] = { { "유럽" , 200 },
 						{ "아시아" , 600 },
@@ -36,8 +36,7 @@ int main() {
 	scanf("%s", name);
 	printf("학번을 입력하세요: ");
 	scanf("%s", p);
-	char* infor[] = {
-		major , number , name        // 포인터 활용 , 포인터 배열을 사용하여 정보 저장
+	char* infor[] = { major , number , name        // 포인터 활용 , 포인터 배열을 사용하여 정보 저장
 	};
 	for (int i = 0; i < 3; i++) {     // 포인터 배열을 출력하여 정보 출력
 		printf(" %s", infor[i]);
@@ -57,9 +56,9 @@ int main() {
 				printf(" %d.%s    %d\n", i + 1, list[i].land, list[i].number);                 // 구조체를 반복문을 사용 하여 감염 현황 출력
 			}
 			printf("------------------------------------------------------------------------\n");
-			printf("확진자 정보를 업데이트 하시겠습니까?( y or n ) : ");
-			scanf("%s", &b);
-			if (b == 'y') {
+			printf("확진자 정보를 업데이트 하시겠습니까?( 네 라면 1을 아니요 라면 2를 입력해주세요. ) : ");
+			scanf("%d", &b);
+			if (b == 1) {
 				while (1) {
 					printf("업데이트할 지역의 번호를 입력해주세요(끝내시려면 7을 입력 해 주세요): ");
 					scanf("%d", &e);
@@ -67,7 +66,7 @@ int main() {
 						break;
 					printf("업데이트할 숫자를 입력해주세요: ");
 					scanf("%d", &d);
-					plus(e, d);	
+					plus(e, d);	                                          //확진자 정보를 업데이트하는 함수를 사용
 				}
 			}
 			else
